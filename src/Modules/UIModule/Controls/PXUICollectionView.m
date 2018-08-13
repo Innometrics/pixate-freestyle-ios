@@ -102,8 +102,12 @@ NSString *const PX_CV_DATASOURCE_PROXY  = @"PXCVDatasourceProxy"; // the proxy f
 
 - (PXUICollectionViewDelegate *)pxDelegate
 {
-    id delegate = objc_getAssociatedObject(self, &PX_CV_DELEGATE);
+    if(self.delegate == nil ||
+       ![self.delegate respondsToSelector:@selector(collectionView:layout:sizeForItemAtIndexPath:)])
+        return nil;
     
+    id delegate = objc_getAssociatedObject(self, &PX_CV_DELEGATE);
+
     if(delegate == nil)
     {
         delegate = [[PXUICollectionViewDelegate alloc] init];
