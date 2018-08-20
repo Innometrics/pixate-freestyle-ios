@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PixateFreestyle"
-  s.version      = "2.1.7"
+  s.version      = "2.1.10"
   s.platform      = :ios, "8.0"
   s.summary      = "Style your iOS app with CSS, using 100% native code and no webviews."
   s.author       = { "Pixate" => "info@pixate.com" }
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   s.libraries = 'xml2', 'sqlite3'
   s.source = {
     :git => 'https://github.com/Innometrics/pixate-freestyle-ios.git',
-    :tag => 'v2.1.7'
+    :tag => 'v2.1.10'
   }
   s.vendored_frameworks = 'PixateFreestyle.framework'
 end
